@@ -3,18 +3,22 @@
     <div class="p-fluid p-grid">
       <div class="p-md-2 p-col-12">
         <Dropdown
-          :options="books"
           v-model="startBookObj"
+          :options="books"
+          :filter="true"
           placeholder="開始"
           optionLabel="name"
+          filterPlaceholder="查詢"
         />
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
-          :options="books"
           v-model="endBookObj"
+          :options="books"
+          :filter="true"
           placeholder="結束"
           optionLabel="name"
+          filterPlaceholder="查詢"
         />
       </div>
       <div class="p-md-2 p-col-12">

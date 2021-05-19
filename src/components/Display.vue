@@ -14,11 +14,12 @@
       v-bind:style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
-        fontSize: +(selectedFontSize || 14) + 'px',
+        fontSize: selectedFontSize + 'px',
       }"
     >
       <div v-for="entry in matchVerse" :key="entry.verse">
-        {{ entry.book }}{{ entry.chapter }}:{{ entry.verse }}
+        {{ entry.book }} <span>{{ entry.chapter }}</span
+        >: <span>{{ entry.verse }}</span>
       </div>
     </div>
     <div
@@ -26,7 +27,7 @@
       v-bind:style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
-        fontSize: +(selectedFontSize || 14) + 'px',
+        fontSize: selectedFontSize + 'px',
       }"
     >
       <div v-for="entry in matchVerse" :key="entry.verse" v-html="entry.content" />
