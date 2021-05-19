@@ -4,7 +4,6 @@
       <div class="p-md-2 p-col-12">
         <Dropdown
           :options="books"
-          :filter="true"
           optionLabel="name"
           v-model="selectedBookObj"
           placeholder="書"
@@ -14,7 +13,6 @@
         <Dropdown
           :options="chapters"
           v-model="selectedChapterObj"
-          :filter="true"
           placeholder="章"
           optionLabel="label"
         />

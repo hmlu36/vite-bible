@@ -5,7 +5,6 @@
         <Dropdown
           :options="books"
           v-model="startBookObj"
-          :filter="true"
           placeholder="開始"
           optionLabel="name"
         />
@@ -14,7 +13,6 @@
         <Dropdown
           :options="books"
           v-model="endBookObj"
-          :filter="true"
           placeholder="結束"
           optionLabel="name"
         />
