@@ -18,8 +18,10 @@
       }"
     >
       <div v-for="entry in matchVerse" :key="entry.verse">
-        {{ entry.book }} <span>{{ entry.chapter }}</span
-        >: <span>{{ entry.verse }}</span>
+        <span>{{ entry.book }}</span>
+        <span>{{ entry.chapter }}</span
+        >:
+        <span>{{ entry.verse }}</span>
       </div>
     </div>
     <div
