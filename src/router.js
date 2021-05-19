@@ -6,7 +6,7 @@ import About from './pages/About.vue';
 
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(process.env.VITE_BASE),
     routes: [
         {
             path: '/',
