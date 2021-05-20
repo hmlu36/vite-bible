@@ -32,7 +32,7 @@ export default {
 /*@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
 
 * {
-  /*font-family: "cwTeXFangSong", sans-serif;*/
+  font-family: "cwTeXFangSong", sans-serif;
   font-size: 20px;
   /*font-family: 'cwTeXMing', sans-serif;*/
   /*font-family: 'cwTeXYen', sans-serif;*/
