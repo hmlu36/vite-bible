@@ -9,6 +9,7 @@
           :filter="true"
           optionLabel="name"
           :showClear="true"
+          :tabindex="-1"
         />
       </div>
       <div class="p-md-2 p-col-12">
@@ -19,6 +20,7 @@
           :filter="true"
           optionLabel="name"
           :showClear="true"
+          :tabindex="-1"
         />
       </div>
       <div class="p-md-2 p-col-12">

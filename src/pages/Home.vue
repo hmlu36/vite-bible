@@ -9,16 +9,18 @@
           :filter="true"
           placeholder="書"
           :showClear="true"
+          :tabindex="-1"
         />
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
           v-model="selectedChapterObj"
           :options="chapters"
-          :filter="true"
           optionLabel="label"
+          :filter="true"
           placeholder="章"
           :showClear="true"
+          :tabindex="-1"
         />
       </div>
     </div>
