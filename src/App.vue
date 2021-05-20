@@ -1,5 +1,5 @@
 <template>
-  <Tag class="p-mr-2" icon="pi pi-link" severity="success" value="讀經小幫手"></Tag>
+  <Tag class="p-mr-2" icon="pi pi-link" severity="info" value="讀經小幫手" />
   <div class="content-section implementation">
     <TabMenu :model="items" />
     <router-view />
@@ -31,7 +31,8 @@ export default {
 /*@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);*/
 /*@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
 
-* {
+*,
+::placeholder {
   font-family: "cwTeXFangSong", sans-serif;
   font-size: 20px;
   /*font-family: 'cwTeXMing', sans-serif;*/

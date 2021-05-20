@@ -43,7 +43,7 @@ export default {
   props: {
     selectedFontSize: {
       type: Number,
-      default: 16,
+      default: 20,
       required: false,
     },
     source: {
