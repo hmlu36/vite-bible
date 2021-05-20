@@ -9,8 +9,7 @@
           :filter="true"
           optionLabel="name"
           :showClear="true"
-          :tabindex="-1"
-        />
+        ></Dropdown>
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
@@ -20,8 +19,7 @@
           :filter="true"
           optionLabel="name"
           :showClear="true"
-          :tabindex="-1"
-        />
+        ></Dropdown>
       </div>
       <div class="p-md-2 p-col-12">
         <InputText v-model="queryObj" placeholder="關鍵字" />
