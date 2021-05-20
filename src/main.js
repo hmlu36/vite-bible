@@ -11,7 +11,7 @@ import InputText from 'primevue/inputtext';
 
 
 import 'primevue/resources/primevue.min.css';
-import 'primevue/resources/themes/saga-blue/theme.css';
+import 'primevue/resources/themes/fluent-light/theme.css';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 

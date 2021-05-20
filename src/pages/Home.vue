@@ -8,7 +8,6 @@
           :filter="true"
           optionLabel="name"
           placeholder="書"
-          filterPlaceholder="查詢"
         />
       </div>
       <div class="p-md-2 p-col-12">
@@ -18,7 +17,6 @@
           :filter="true"
           optionLabel="label"
           placeholder="章"
-          filterPlaceholder="查詢"
         />
       </div>
     </div>

@@ -8,7 +8,6 @@
           :filter="true"
           placeholder="開始"
           optionLabel="name"
-          filterPlaceholder="查詢"
         />
       </div>
       <div class="p-md-2 p-col-12">
@@ -18,7 +17,6 @@
           :filter="true"
           placeholder="結束"
           optionLabel="name"
-          filterPlaceholder="查詢"
         />
       </div>
       <div class="p-md-2 p-col-12">
