@@ -9,7 +9,14 @@
           :filter="true"
           placeholder="書"
           :showClear="true"
-        />
+        >
+          <div v-if="slotProps.value">
+            <span>{{ slotProps.value.name }}</span>
+          </div>
+          <span v-else>
+            {{ slotProps.placeholder }}
+          </span>
+        </Dropdown>
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
@@ -19,7 +26,14 @@
           :filter="true"
           placeholder="章"
           :showClear="true"
-        />
+        >
+          <div v-if="slotProps.value">
+            <span>{{ slotProps.value.label }}</span>
+          </div>
+          <span v-else>
+            {{ slotProps.placeholder }}
+          </span>
+        </Dropdown>
       </div>
     </div>
     <Display source="home" :matchVerse="readBible" />
