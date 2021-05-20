@@ -1,5 +1,5 @@
 <template>
-  <Tag class="p-mr-2" icon="pi pi-link" severity="info" value="讀經小幫手" />
+  <Tag class="p-mr-2" icon="pi pi-link" value="讀經小幫手" />
   <div class="content-section implementation">
     <TabMenu :model="items" />
     <router-view />
