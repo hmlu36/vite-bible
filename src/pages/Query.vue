@@ -5,18 +5,20 @@
         <Dropdown
           v-model="startBookObj"
           :options="books"
-          :filter="true"
           placeholder="開始"
+          :filter="true"
           optionLabel="name"
+          :showClear="true"
         />
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
           v-model="endBookObj"
           :options="books"
-          :filter="true"
           placeholder="結束"
+          :filter="true"
           optionLabel="name"
+          :showClear="true"
         />
       </div>
       <div class="p-md-2 p-col-12">
