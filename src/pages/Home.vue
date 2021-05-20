@@ -9,7 +9,7 @@
           :filter="true"
           placeholder="書"
           :showClear="true"
-        ></Dropdown>
+        />
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
@@ -19,7 +19,7 @@
           :filter="true"
           placeholder="章"
           :showClear="true"
-        ></Dropdown>
+        />
       </div>
     </div>
     <Display source="home" :matchVerse="readBible" />
