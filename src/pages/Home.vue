@@ -9,21 +9,7 @@
           :filter="true"
           placeholder="書"
           :showClear="true"
-        >
-          <template #value="slotProps">
-            <div v-if="slotProps.value">
-              <span>{{ slotProps.value.name }}</span>
-            </div>
-            <span v-else>
-              {{ slotProps.placeholder }}
-            </span>
-          </template>
-          <template #option="slotProps">
-            <div>
-              <span>{{ slotProps.option.name }}</span>
-            </div>
-          </template>
-        </Dropdown>
+        />
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
