@@ -11,16 +11,6 @@
           :showClear="true"
         />
       </div>
-      <div class="p-md-2 p-col-12">
-        <Dropdown
-          v-model="selectedChapterObj"
-          :options="chapters"
-          :filter="true"
-          optionLabel="label"
-          placeholder="章"
-          :showClear="true"
-        />
-      </div>
     </div>
     <Display source="home" :matchVerse="readBible" />
   </div>
