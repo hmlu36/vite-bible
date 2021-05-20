@@ -9,31 +9,17 @@
           :filter="true"
           placeholder="書"
           :showClear="true"
-        >
-          <div v-if="slotProps.value">
-            <span>{{ slotProps.value.name }}</span>
-          </div>
-          <span v-else>
-            {{ slotProps.placeholder }}
-          </span>
-        </Dropdown>
+        />
       </div>
       <div class="p-md-2 p-col-12">
         <Dropdown
           v-model="selectedChapterObj"
           :options="chapters"
-          optionLabel="label"
           :filter="true"
+          optionLabel="label"
           placeholder="章"
           :showClear="true"
-        >
-          <div v-if="slotProps.value">
-            <span>{{ slotProps.value.label }}</span>
-          </div>
-          <span v-else>
-            {{ slotProps.placeholder }}
-          </span>
-        </Dropdown>
+        />
       </div>
     </div>
     <Display source="home" :matchVerse="readBible" />
@@ -49,8 +35,8 @@ export default {
     Display,
   },
   setup() {
-    const selectedBookObj = ref(null);
-    const selectedChapterObj = ref(null);
+    const selectedBookObj = ref();
+    const selectedChapterObj = ref();
     const books = inject("books");
     const bible = inject("bible");
 

@@ -40,8 +40,8 @@ export default {
     Display,
   },
   setup() {
-    const startBookObj = ref(null);
-    const endBookObj = ref(null);
+    const startBookObj = ref();
+    const endBookObj = ref();
     const queryObj = ref(null);
     const queryResult = ref([]);
     const books = inject("books");
