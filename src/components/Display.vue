@@ -8,24 +8,38 @@
     </div>
   </div>
 
-  <div class="p-grid p-nogutter" v-if="matchVerse != null && matchVerse.length > 0">
+  <div class="p-grid" v-if="matchVerse != null && matchVerse.length > 0">
     <div
       class="p-md-1 p-col-3 text-right"
-      v-bind:style="{
+      :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <div
-        v-for="entry in matchVerse"
-        :key="entry.verse"
-        v-html="entry.book + entry.chapter + ':' + entry.verse"
-      />
+      <div v-for="entry in matchVerse" :key="entry.verse">
+        <span>
+          {{ entry.book }}
+        </span>
+        <span
+          :style="{
+            fontSize: selectedFontSize - 4 + 'px',
+          }"
+        >
+          {{ entry.chapter }}
+        </span>
+        :
+        <span
+          :style="{
+            fontSize: selectedFontSize - 4 + 'px',
+          }"
+          >{{ entry.verse }}
+        </span>
+      </div>
     </div>
     <div
       class="p-md-11 p-col-9"
-      v-bind:style="{
+      :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
         fontSize: selectedFontSize + 'px',
