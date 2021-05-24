@@ -10,7 +10,7 @@
 
   <div class="p-grid" v-if="matchVerse != null && matchVerse.length > 0">
     <div
-      class="p-md-1 p-col-3 text-right p-d-block"
+      class="p-md-1 p-col-3 text-right"
       :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div
-      class="p-md-11 p-col-9 p-d-block"
+      class="p-md-11 p-col-9"
       :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
