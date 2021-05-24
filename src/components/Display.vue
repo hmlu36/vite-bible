@@ -1,5 +1,5 @@
 <template>
-  <div class="p-grid">
+  <div class="p-grid p-ai-center vertical-container">
     <div class="p-md-1 p-col-3 text-right">
       <h4>節</h4>
     </div>
@@ -8,36 +8,33 @@
     </div>
   </div>
 
-  <div class="p-grid" v-if="matchVerse != null && matchVerse.length > 0">
+  <div
+    class="p-grid p-ai-center vertical-container"
+    v-if="matchVerse != null && matchVerse.length > 0"
+  >
     <div
       class="p-md-1 p-col-3 text-right"
-      :style="{
+      v-bind:style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <span
+      <div
         v-for="entry in matchVerse"
         :key="entry.verse"
-        :style="{ 'line-height': normal }"
-        v-html="entry.book + entry.chapter + ':' + entry.verse + '</br>'"
+        v-html="entry.book + entry.chapter + ':' + entry.verse"
       />
     </div>
     <div
       class="p-md-11 p-col-9"
-      :style="{
+      v-bind:style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <span
-        v-for="entry in matchVerse"
-        :key="entry.verse"
-        :style="{ 'line-height': normal }"
-        v-html="entry.content + '</br>'"
-      />
+      <div v-for="entry in matchVerse" :key="entry.verse" v-html="entry.content" />
     </div>
   </div>
 </template>
