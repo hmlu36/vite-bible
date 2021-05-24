@@ -19,9 +19,18 @@
     >
       <div v-for="entry in matchVerse" :key="entry.verse">
         <span>{{ entry.book }}</span>
-        <span>{{ entry.chapter }}</span
+        <span
+          v-bind:style="{
+            fontSize: selectedFontSize - 2 + 'px',
+          }"
+          >{{ entry.chapter }}</span
         >:
-        <span>{{ entry.verse }}</span>
+        <span
+          v-bind:style="{
+            fontSize: selectedFontSize - 2 + 'px',
+          }"
+          >{{ entry.verse }}</span
+        >
       </div>
     </div>
     <div
