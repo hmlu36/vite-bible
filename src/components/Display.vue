@@ -41,7 +41,9 @@
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <div v-for="entry in matchVerse" :key="entry.verse" v-html="entry.content" />
+      <div v-for="entry in matchVerse" :key="entry.verse">
+        <span v-html="entry.content"></span>
+      </div>
     </div>
   </div>
 </template>
