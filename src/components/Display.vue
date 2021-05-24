@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div class="p-grid" v-if="matchVerse != null && matchVerse.length > 0">
+  <div class="p-grid p-nogutter" v-if="matchVerse != null && matchVerse.length > 0">
     <div
       class="p-md-1 p-col-3 text-right"
       v-bind:style="{
@@ -24,7 +24,7 @@
       />
     </div>
     <div
-      class="p-md-11 p-col-9 p-pblack-1"
+      class="p-md-11 p-col-9"
       v-bind:style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
