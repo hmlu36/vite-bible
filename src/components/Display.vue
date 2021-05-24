@@ -17,11 +17,11 @@
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <div
+      <span
         v-for="entry in matchVerse"
         :key="entry.verse"
         :style="{ 'line-height': normal }"
-        v-html="entry.book + entry.chapter + ':' + entry.verse"
+        v-html="entry.book + entry.chapter + ':' + entry.verse + '</br>'"
       />
     </div>
     <div
@@ -32,11 +32,11 @@
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <div
+      <span
         v-for="entry in matchVerse"
         :key="entry.verse"
         :style="{ 'line-height': normal }"
-        v-html="entry.content"
+        v-html="entry.content + '</br>'"
       />
     </div>
   </div>
