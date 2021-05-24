@@ -8,6 +8,8 @@ import TabMenu from 'primevue/tabmenu';
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
 import Tag from 'primevue/tag';
+import Splitter from 'primevue/splitter';
+import SplitterPanel from 'primevue/splitterpanel';
 
 import 'primevue/resources/primevue.min.css';
 import 'primevue/resources/themes/saga-green/theme.css';
@@ -23,4 +25,6 @@ createApp(App)
     .component('Button', Button)
     .component('InputText', InputText)
     .component('Tag', Tag)
+    .component('Splitter', Splitter)
+    .component('SplitterPanel', SplitterPanel)
     .mount('#app')

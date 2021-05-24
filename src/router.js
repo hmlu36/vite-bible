@@ -1,11 +1,11 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
 
 import Home from './pages/Home.vue';
 import Query from './pages/Query.vue';
 import About from './pages/About.vue';
 
 const router = createRouter({
-    history: createWebHistory(`${import.meta.env.BASE_URL}`),
+    history: createWebHashHistory(`${import.meta.env.BASE_URL}`),
     routes: [
         {
             path: '/',
