@@ -17,23 +17,11 @@
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <div v-for="entry in matchVerse" :key="entry.verse">
-        <span v-html="entry.book" />
-        <span
-          v-bind:style="{
-            'font-family': 'Times New Roman',
-            fontSize: selectedFontSize - 2 + 'px',
-          }"
-          v-html="entry.chapter"
-        />:
-        <span
-          v-bind:style="{
-            'font-family': 'Times New Roman',
-            fontSize: selectedFontSize - 2 + 'px',
-          }"
-          v-html="entry.verse"
-        />
-      </div>
+      <div
+        v-for="entry in matchVerse"
+        :key="entry.verse"
+        v-html="entry.book + entry.chapter + ':' + entry.verse"
+      />
     </div>
     <div
       class="p-md-11 p-col-9"
@@ -43,9 +31,7 @@
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <div v-for="entry in matchVerse" :key="entry.verse">
-        <span v-html="entry.content"></span>
-      </div>
+      <div v-for="entry in matchVerse" :key="entry.verse" v-html="entry.content" />
     </div>
   </div>
 </template>
