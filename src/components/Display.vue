@@ -10,7 +10,7 @@
 
   <div class="p-grid" v-if="matchVerse != null && matchVerse.length > 0">
     <div
-      class="p-md-1 p-col-3 text-right"
+      class="p-md-1 p-col-3 text-right p-d-block"
       :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
@@ -21,24 +21,15 @@
         <span>
           {{ entry.book }}
         </span>
-        <span
-          :style="{
-            fontSize: selectedFontSize - 4 + 'px',
-          }"
-        >
+        <span>
           {{ entry.chapter }}
         </span>
         :
-        <span
-          :style="{
-            fontSize: selectedFontSize - 4 + 'px',
-          }"
-          >{{ entry.verse }}
-        </span>
+        <span>{{ entry.verse }} </span>
       </div>
     </div>
     <div
-      class="p-md-11 p-col-9"
+      class="p-md-11 p-col-9 p-d-block"
       :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
