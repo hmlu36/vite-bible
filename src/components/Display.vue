@@ -11,7 +11,7 @@
   <div class="p-grid" v-if="matchVerse != null && matchVerse.length > 0">
     <div
       class="p-md-1 p-col-3 text-right"
-      v-bind:style="{
+      :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
         fontSize: selectedFontSize + 'px',
@@ -20,18 +20,24 @@
       <div
         v-for="entry in matchVerse"
         :key="entry.verse"
+        :style="{ 'line-height': normal }"
         v-html="entry.book + entry.chapter + ':' + entry.verse"
       />
     </div>
     <div
       class="p-md-11 p-col-9"
-      v-bind:style="{
+      :style="{
         'white-space': 'nowrap',
         'overflow-x': 'scroll',
         fontSize: selectedFontSize + 'px',
       }"
     >
-      <div v-for="entry in matchVerse" :key="entry.verse" v-html="entry.content" />
+      <div
+        v-for="entry in matchVerse"
+        :key="entry.verse"
+        :style="{ 'line-height': normal }"
+        v-html="entry.content"
+      />
     </div>
   </div>
 </template>
