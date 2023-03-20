@@ -43,7 +43,6 @@ export default {
 }
 
 @media (max-width: 1025px) {
-  /* CSS */
   *,
   ::placeholder {
     font-size: 20px;
