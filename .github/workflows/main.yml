@@ -11,6 +11,7 @@ jobs:
       USER_NAME: joshua.lu
       USER_EMAIL: hmlu36@gmail.com
       PUBLISH_DIR: ./dist
+      NODE_OPTIONS: --openssl-legacy-provider
     runs-on: ubuntu-latest
     strategy:
       matrix:
