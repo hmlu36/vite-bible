@@ -1,55 +1,77 @@
 <template>
-  <Tag class="p-mr-2" icon="pi pi-link" value="讀經小幫手" />
-  <div class="content-section implementation">
-    <TabMenu :model="items" />
-    <router-view />
+  <div id="app">
+    <header>
+      <nav>
+        <router-link to="/">聖經閱讀</router-link> | 
+        <router-link to="/search">搜尋經文</router-link>
+      </nav>
+    </header>
+    
+    <main>
+      <router-view />
+    </main>
+    
+    <footer>
+      <p>聖經閱讀應用 &copy; {{ new Date().getFullYear() }}</p>
+    </footer>
   </div>
 </template>
 
 <script>
-import { provide, ref, readonly } from "vue";
-import bibleJson from "./data/bible.json";
-import booksJson from "./data/books.json";
-
 export default {
-  setup() {
-    const items = ref([
-      { label: "讀經", icon: "pi pi-fw pi-home", to: "/" },
-      { label: "查詢", icon: "pi pi-fw pi-calendar", to: "/query" },
-      /*{ label: "關於", icon: "pi pi-fw pi-pencil", to: "/about" },*/
-    ]);
-    provide("bible", readonly(bibleJson));
-    provide("books", readonly(booksJson));
-
-    return { items };
-  },
+  name: 'App'
 };
 </script>
+
 <style>
-@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
-/*@import url(https://fonts.googleapis.com/earlyaccess/cwtexming.css);
-/*@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);*/
-/*@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
-
-@media (min-width: 1025px) {
-  *,
-  ::placeholder {
-    font-family: "cwTeXFangSong", sans-serif;
-    font-size: 20px;
-    /*font-family: 'cwTeXMing', sans-serif;*/
-    /*font-family: 'cwTeXYen', sans-serif;*/
-    /*font-family: 'Noto Sans TC', sans-serif;*/
-  }
+#app {
+  font-family: 'Microsoft JhengHei', 'PingFang TC', 'Heiti TC', 'Apple LiGothic', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 1025px) {
-  *,
-  ::placeholder {
-    font-size: 20px;
-  }
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.text-right {
-  text-align: right;
+header {
+  background-color: #f8f9fa;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  padding: 10px 0;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 15px;
+  font-size: 0.9em;
+  color: #6c757d;
 }
 </style>

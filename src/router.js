@@ -1,29 +1,16 @@
-import { createWebHashHistory, createRouter } from "vue-router";
+// router.js
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from './views/Home.vue';
+import SearchPage from './views/SearchPage.vue';
 
-import Home from './pages/Home.vue';
-import Query from './pages/Query.vue';
-import About from './pages/About.vue';
+const routes = [
+  { path: '/', component: Home },
+  { path: '/search', component: SearchPage },
+];
 
 const router = createRouter({
-    history: createWebHashHistory(`${import.meta.env.BASE_URL}`),
-    routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: Home,
-        },
-        {
-            path: '/query',
-            name: 'query',
-            component: Query,
-        },
-        {
-            path: '/about',
-            name: 'about',
-            component: About,
-        },
-    ]
+  history: createWebHistory(),
+  routes,
 });
-
 
 export default router;
