@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -26,6 +26,7 @@ jobs:
           npm install
       - name: npm run build
         run: |
+          export NODE_OPTIONS=--openssl-legacy-provider
           npm run build
       - name: Commit files
         run: |
