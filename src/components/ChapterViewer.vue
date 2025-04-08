@@ -56,8 +56,6 @@ export default {
       }
     });
 
-    console.log('Selected Book:', books.find(book => book.abbr == props.selectedBook)?.name || '');
-
     // 取得節號
     const getVerseNumber = (verse) => {
       const match = verse.match(/^(\d+(-\d+)?\.)/); // 匹配節號（如 "1." 或 "1-2."）
