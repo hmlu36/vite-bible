@@ -1,7 +1,7 @@
 // router.js
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from './views/Home.vue';
-import SearchPage from './views/SearchPage.vue';
+import Home from './components/Home.vue';
+import SearchPage from './components/SearchPage.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -9,7 +9,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.MODE === 'production' ? '/vite-bible/' : '/'),
+  history: createWebHistory(),
   routes,
 });
 
