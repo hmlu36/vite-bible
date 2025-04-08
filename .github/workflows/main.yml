@@ -21,7 +21,7 @@ jobs:
       - name: npm run build
         run: |
           export NODE_OPTIONS=--openssl-legacy-provider
-        run: npx vite build --base=/vite-bible/
+          npx vite build --base=/vite-bible/
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
