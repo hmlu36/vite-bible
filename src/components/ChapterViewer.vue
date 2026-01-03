@@ -8,8 +8,7 @@
           <span class="verse-number">
             {{ getVerseNumber(verse) }}
           </span>
-          <span class="verse-text">
-            {{ getVerseText(verse) }}
+          <span class="verse-text" v-html="getHighlightedText(getVerseText(verse))">
           </span>
         </p>
       </div>
@@ -40,6 +39,10 @@ export default {
       type: Number,
       required: false,
       default: 1
+    },
+    highlightKeyword: {
+      type: String,
+      default: ''
     }
   },
   setup(props) {
@@ -67,11 +70,19 @@ export default {
       return verse.replace(/^(\d+(-\d+)?\.)\s*/, ''); // 移除節號，返回剩餘的內容
     };
 
+    // 高亮關鍵字
+    const getHighlightedText = (text) => {
+      if (!props.highlightKeyword) return text;
+      const regex = new RegExp(`(${props.highlightKeyword})`, 'g');
+      return text.replace(regex, '<span class="highlight">$1</span>');
+    };
+
     return {
       books,
       bibleData,
       getVerseNumber,
       getVerseText,
+      getHighlightedText
     };
   }
 };
@@ -120,5 +131,10 @@ export default {
 
 .verse-text {
   flex: 1;
+}
+
+:deep(.highlight) {
+  background-color: yellow;
+  font-weight: bold;
 }
 </style>

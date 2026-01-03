@@ -23,12 +23,16 @@ export default {
     selectedVersion: {
       type: String,
       default: 'cuv'
+    },
+    book: {
+      type: String,
+      default: '創'
     }
   },
   data() {
     return {
       books: books,
-      selectedBook: '',
+      selectedBook: this.book,
       bookGroups: [
         {
           name: '摩西五經',
@@ -73,8 +77,15 @@ export default {
       ]
     };
   },
+  watch: {
+    book(newVal) {
+      if (newVal) {
+        this.selectedBook = newVal;
+      }
+    }
+  },
   mounted() {
-    // 設置默認選擇的書卷為創世記
+    // 只有在沒有選擇書卷時才設置默認值
     if (!this.selectedBook) {
       this.selectedBook = '創';
       this.onBookChange();

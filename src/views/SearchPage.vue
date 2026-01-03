@@ -29,7 +29,13 @@
       <div v-else-if="searchResults.length > 0" class="search-results">
         <h3>搜尋結果 ({{ searchResults.length }} 筆)</h3>
         <ul>
-          <li v-for="(result, index) in searchResults" :key="index" class="result-item">
+          <li 
+            v-for="(result, index) in searchResults" 
+            :key="index" 
+            class="result-item clickable"
+            @click="goToChapter(result)"
+            :title="`點擊跳轉到 ${result.book} 第 ${result.chapter} 章`"
+          >
             <div class="result-reference">{{ result.book }} {{ result.chapter }}:{{ result.verse }}</div>
             <div class="result-text" v-html="highlightKeyword(result.text)"></div>
           </li>
@@ -63,17 +69,44 @@ export default {
       debounceTimeout: null
     };
   },
+  created() {
+    // 從 URL 恢復搜尋狀態
+    const { q, version } = this.$route.query;
+    if (q) {
+      this.keyword = q;
+    }
+    if (version) {
+      this.selectedVersion = version;
+    }
+    
+    // 如果有關鍵字，立即執行搜尋
+    if (this.keyword) {
+      this.searchBible();
+    }
+  },
   methods: {
     debounceSearch() {
       clearTimeout(this.debounceTimeout);
       if (this.keyword.length < 2) {
         this.searchResults = [];
+        // 清除 URL 參數
+        this.updateUrl();
         return;
       }
       
       this.debounceTimeout = setTimeout(() => {
+        this.updateUrl();
         this.searchBible();
       }, 500);
+    },
+    
+    updateUrl() {
+      // 更新 URL 但不觸發導航（除非參數改變）
+      const query = {};
+      if (this.keyword) query.q = this.keyword;
+      if (this.selectedVersion !== 'cuv') query.version = this.selectedVersion;
+      
+      this.$router.replace({ query }).catch(() => {});
     },
     
     async searchBible() {
@@ -104,6 +137,7 @@ export default {
                 if (text.includes(this.keyword)) {
                   this.searchResults.push({
                     book: book.name,
+                    bookAbbr: bookAbbr,
                     chapter,
                     verse: verseIndex + 1,
                     text
@@ -124,10 +158,23 @@ export default {
       if (!this.keyword) return text;
       const regex = new RegExp(`(${this.keyword})`, 'g');
       return text.replace(regex, '<span class="highlight">$1</span>');
+    },
+    
+    goToChapter(result) {
+      this.$router.push({
+        path: '/',
+        query: {
+          book: result.bookAbbr,
+          chapter: result.chapter,
+          version: this.selectedVersion,
+          highlight: this.keyword
+        }
+      });
     }
   },
   watch: {
     selectedVersion() {
+      this.updateUrl();
       if (this.keyword) {
         this.searchBible();
       }
@@ -207,6 +254,16 @@ select {
   padding: 10px;
   border-bottom: 1px solid #eee;
   text-align: left;
+}
+
+.result-item.clickable {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+}
+
+.result-item.clickable:hover {
+  background-color: #f0f8ff;
 }
 
 .result-reference {

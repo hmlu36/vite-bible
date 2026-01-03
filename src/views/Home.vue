@@ -5,11 +5,12 @@
     <div class="bible-container">
       <div class="selectors">
         <VersionSelector @version-changed="updateVersion" />
-        <BookSelector @book-selected="updateBook" />
-        <ChapterSelector :selectedBook="selectedBook" @chapter-selected="updateChapter" />
+        <BookSelector :book="selectedBook" @book-selected="updateBook" />
+        <ChapterSelector :selectedBook="selectedBook" :chapter="Number(selectedChapter)" @chapter-selected="updateChapter" />
       </div>
       <ChapterViewer :selectedVersion="selectedVersion" :selectedBook="selectedBook"
-        :selectedChapter="Number(selectedChapter)" :key="`${selectedBook}${selectedVersion}${selectedChapter}`" />
+        :selectedChapter="Number(selectedChapter)" :highlightKeyword="highlightKeyword"
+        :key="`${selectedBook}${selectedVersion}${selectedChapter}`" />
     </div>
   </div>
 </template>
@@ -33,7 +34,24 @@ export default {
       selectedVersion: 'cuv',
       selectedBook: '創',
       selectedChapter: 1,
+      highlightKeyword: '',
     };
+  },
+  created() {
+    // 從 URL 參數讀取書卷和章節
+    const { book, chapter, version, highlight } = this.$route.query;
+    if (book) {
+      this.selectedBook = book;
+    }
+    if (chapter) {
+      this.selectedChapter = Number(chapter);
+    }
+    if (version) {
+      this.selectedVersion = version;
+    }
+    if (highlight) {
+      this.highlightKeyword = highlight;
+    }
   },
   methods: {
     updateVersion(version) {

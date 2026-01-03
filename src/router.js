@@ -4,7 +4,7 @@ import Home from './views/Home.vue';
 import SearchPage from './views/SearchPage.vue';
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', name: 'home', component: Home },
   { path: '/search', component: SearchPage },
 ];
 
