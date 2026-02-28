@@ -141,17 +141,14 @@ h1 {
 
 .selectors {
   display: flex;
+  flex-wrap: nowrap;
   gap: 20px;
   margin-bottom: 20px;
-  align-items: baseline;
-  /* Change to baseline alignment */
+  align-items: center;
 }
 
 .selectors>* {
-  flex: 1;
-  /* Distribute space evenly */
-  min-width: 150px;
-  /* Minimum width for each selector */
+  flex: 0 0 auto;
 }
 
 .navigation-buttons {
@@ -217,7 +214,7 @@ h1 {
 
 @media (max-width: 600px) {
   .selectors {
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
   }
 

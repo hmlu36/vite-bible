@@ -1,12 +1,14 @@
 <!-- VersionSelector.vue -->
 <template>
-  <div>
-    <label for="version">版本：</label>
-    <select id="version" v-model="selectedVersion" @change="updateVersion">
-      <option v-for="version in versions" :key="version.id" :value="version.id">
-        {{ version.name }}
-      </option>
-    </select>
+  <div class="version-selector">
+    <div class="selector-container">
+      <label for="version">版本：</label>
+      <select id="version" v-model="selectedVersion" @change="updateVersion">
+        <option v-for="version in versions" :key="version.id" :value="version.id">
+          {{ version.name }}
+        </option>
+      </select>
+    </div>
   </div>
 </template>
 
@@ -29,3 +31,20 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.selector-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+}
+</style>

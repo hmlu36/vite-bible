@@ -1,12 +1,14 @@
 <!-- ChapterSelector.vue -->
 <template>
   <div class="chapter-selector">
+    <div class="selector-container">
     <label for="chapter">章節：</label>
     <select id="chapter" v-model="selectedChapterNum" @change="onChapterChange">
       <option v-for="chapterNum in chapterCount" :key="chapterNum" :value="chapterNum">
         第 {{ chapterNum }} 章
       </option>
     </select>
+    </div>
   </div>
 </template>
 
@@ -66,14 +68,19 @@ export default {
 </script>
 
 <style scoped>
-.chapter-selector {
-  margin-bottom: 15px;
+.selector-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 select {
-  padding: 8px;
+  padding: 8px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
   min-width: 100px;
 }
 </style>
