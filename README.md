@@ -1,4 +1,4 @@
-網址: hmlu36.github.io/vite-bible/
+網址: [https://hmlu36.github.io/vite-bible/](https://hmlu36.github.io/vite-bible/)
 
 # 聖經線上查詢應用 (Bible Search Application)
 
