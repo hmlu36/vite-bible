@@ -1,3 +1,5 @@
+網址: hmlu36.github.io/vite-bible/
+
 # 聖經線上查詢應用 (Bible Search Application)
 
 ![聖經閱讀](https://img.shields.io/badge/language-TypeScript-blue) ![Vue3](https://img.shields.io/badge/framework-Vue%203-green) ![Vite](https://img.shields.io/badge/build-Vite-purple)
